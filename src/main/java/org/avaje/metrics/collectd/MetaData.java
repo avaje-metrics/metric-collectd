@@ -62,7 +62,7 @@ class MetaData {
     }
 
     MetaData typeInstance(String name) {
-        typeInstance = Sanitize.instanceName(name);
+        typeInstance = name;//Sanitize.instanceName(name);
         return this;
     }
 
