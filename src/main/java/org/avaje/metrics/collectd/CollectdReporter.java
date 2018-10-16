@@ -234,17 +234,17 @@ public class CollectdReporter implements MetricReporter {
   }
 
   private void reportGauge(MetaData metaData, GaugeLongStatistics metric) {
-    metaData.plugin(metric.getName().getSimpleName());
+    metaData.plugin(metric.getName());
     write(metaData.typeInstance("value"), metric.getValue());
   }
 
   private void reportGauge(MetaData metaData, GaugeDoubleStatistics metric) {
-    metaData.plugin(metric.getName().getSimpleName());
+    metaData.plugin(metric.getName());
     write(metaData.typeInstance("value"), metric.getValue());
   }
 
   private void reportCounter(MetaData metaData, CounterStatistics metric) {
-    metaData.plugin(metric.getName().getSimpleName());
+    metaData.plugin(metric.getName());
     write(metaData.typeInstance("count"), metric.getCount());
   }
 
@@ -254,7 +254,7 @@ public class CollectdReporter implements MetricReporter {
 
   private void reportValues(MetaData metaData, ValueStatistics metric) {
 
-    metaData.plugin(metric.getName().getSimpleName());
+    metaData.plugin(metric.getName());
     write(metaData.typeInstance("count"), metric.getCount());
     write(metaData.typeInstance("max"), metric.getMax());
     write(metaData.typeInstance("mean"), metric.getMean());
